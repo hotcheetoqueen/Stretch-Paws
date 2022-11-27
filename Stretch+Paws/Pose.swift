@@ -27,7 +27,7 @@ class Poses {
             steps: ["From a kneeling position, place your hands shoulder-distance apart and spread your fingers.", "Tuck your toes and lift your hips up towards the ceiling so you create an inverted V shape.", "Balance the weight between hands and feet and think about tilting your tailbone up towards the ceiling.","Send your gaze towards your feet and breath!"],
             topTip: "Bend your knees in order to create more length through the spine." ),
         Pose(
-              name: "Standing Forward Fold",
+              name: "Forward Fold",
               asana: "Uttanasana",
               icon: "Cat-2",
               description: "Think of this pose as giving yourself a cuddle. As you bend and look through your legs, you may even catch sight of your tail... or a mouse.",

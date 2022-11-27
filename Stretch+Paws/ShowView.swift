@@ -9,8 +9,12 @@ import SwiftUI
 
 struct ShowView: View {
     var body: some View {
-        Text("Purrrfect!")
-            .font(.title)
+        ZStack {
+            Color("Secondary")
+                .ignoresSafeArea()
+            Text("Purrrfect!")
+                .font(.title)
+        }
     }
 }
 

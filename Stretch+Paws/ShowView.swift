@@ -72,6 +72,7 @@ struct TimerPanelView: View {
             }.frame(maxWidth: .infinity, maxHeight: timerOpen ? 400 : 80)
             .foregroundColor(Color("Secondary"))
             .background(Color("Highlight"))
+            .cornerRadius(5)
         }.ignoresSafeArea()
             .onTapGesture {
                 timerOpen.toggle()

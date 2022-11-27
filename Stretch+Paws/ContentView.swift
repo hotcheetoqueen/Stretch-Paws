@@ -11,15 +11,15 @@ struct ContentView: View {
     
     init() {
         UITableView.appearance().backgroundColor =
-        UIColor(named: "Secondary")
+            UIColor(named: "Secondary")
     }
     
     let poses = Poses()
     var body: some View {
         NavigationView {
-            List(poses.poseData) {pose in
+            List(poses.poseData) { pose in
                 NavigationLink(destination:
-                    ShowView()) {
+                        ShowView(pose: pose)) {
                     Image(pose.icon)
                         .resizable()
                         .frame(

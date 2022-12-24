@@ -9,11 +9,11 @@ import Foundation
 
 // Where does it need to be shared?
 
-class PoseTimer {
-    var timerActive = false
-    var timerPaused = false
-    var timerEnded = false
-    var timerDuration = 30
+class PoseTimer: ObservableObject {
+    @Published var timerActive = false
+    @Published var timerPaused = false
+    @Published var timerEnded = false
+    @Published var timerDuration = 30
     var poseTimer = Timer()
     
     // Functionality:
@@ -21,9 +21,9 @@ class PoseTimer {
         timerActive = true
         poseTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { Timer in
                 self.timerDuration -= 1
-            if self.timerDuration == 0 {
-                self.endTimer()
-            }
+                if self.timerDuration == 0 {
+                    self.endTimer()
+                }
             })
     }
     

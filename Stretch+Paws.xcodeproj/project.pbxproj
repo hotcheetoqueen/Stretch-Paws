@@ -60,8 +60,8 @@
 				043319F42932C12200936A1E /* Stretch_PawsApp.swift */,
 				043319F62932C12200936A1E /* ContentView.swift */,
 				0494697C2932F68800C795DB /* ShowView.swift */,
-				04D07DBF293416DB005520F2 /* PoseTimer.swift */,
 				049469802932F98000C795DB /* Pose.swift */,
+				04D07DBF293416DB005520F2 /* PoseTimer.swift */,
 				043319F82932C12400936A1E /* Assets.xcassets */,
 				043319FA2932C12400936A1E /* Preview Content */,
 			);

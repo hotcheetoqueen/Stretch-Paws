@@ -29,15 +29,18 @@ struct ShowView: View {
                         .fontWeight(.medium)
                     VStack {
                         Text(pose.description)
+                        Spacer()
                         Text("How to")
                             .fontWeight(.medium)
                             .foregroundColor(Color("Highlight"))
+                        Spacer()
                         ForEach(pose.steps, id: \.self) { step in
                             Text(step)
                         }
                         Text("Tip")
                             .fontWeight(.medium)
                             .foregroundColor(Color("Highlight"))
+                        Spacer()
                         Text(pose.topTip)
                     }
                 }.padding(.horizontal, 24)
@@ -63,12 +66,14 @@ struct ShowView_Previews: PreviewProvider {
 }
 
 struct TimerPanelView: View {
+    @StateObject var poseTimer = PoseTimer()
+    
     @Binding var timerOpen: Bool
     var body: some View {
         VStack {
             Spacer()
             VStack {
-                timerOpen ? AnyView(TimerOpenView()) : AnyView(TimerClosedView())
+                timerOpen ? AnyView(TimerOpenView(poseTimer: poseTimer)) : AnyView(TimerClosedView())
             }.frame(maxWidth: .infinity, maxHeight: timerOpen ? 400 : 80)
             .foregroundColor(Color("Secondary"))
             .background(Color("Highlight"))
@@ -81,6 +86,8 @@ struct TimerPanelView: View {
 }
 
 struct TimerOpenView: View {
+    @ObservedObject var poseTimer: PoseTimer
+
     var body: some View {
         VStack {
             Text("Hold that pose")
@@ -90,11 +97,11 @@ struct TimerOpenView: View {
             Text("Try staying in this pose until the timer finishes. If you need to come out for a moment, take a breath and make your way back into the pose. You've got this!")
                 .multilineTextAlignment(.center)
             Spacer()
-            Text("00:30")
+            Text(poseTimer.timerDuration < 10 ? "00:0\(poseTimer.timerDuration)" : "00:\(poseTimer.timerDuration)")
                 .font(.system(size: 96))
             Spacer()
             Button {
-                //do something
+                poseTimer.startTimer()
             } label: {
                 Text("Start timer")
             }.frame(width: 300, height: 50)

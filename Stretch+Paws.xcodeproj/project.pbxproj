@@ -14,6 +14,7 @@
 		0494697D2932F68800C795DB /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494697C2932F68800C795DB /* ShowView.swift */; };
 		049469812932F98000C795DB /* Pose.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049469802932F98000C795DB /* Pose.swift */; };
 		04D07DC0293416DB005520F2 /* PoseTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D07DBF293416DB005520F2 /* PoseTimer.swift */; };
+		04E875EA2956BFAF004430FD /* chime.wav in Resources */ = {isa = PBXBuildFile; fileRef = 04E875E92956BFAF004430FD /* chime.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		0494697C2932F68800C795DB /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		049469802932F98000C795DB /* Pose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pose.swift; sourceTree = "<group>"; };
 		04D07DBF293416DB005520F2 /* PoseTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PoseTimer.swift; sourceTree = "<group>"; };
+		04E875E92956BFAF004430FD /* chime.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = chime.wav; path = "../../../../../../Downloads/chapter-3/chime.wav"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				0494697C2932F68800C795DB /* ShowView.swift */,
 				049469802932F98000C795DB /* Pose.swift */,
 				04D07DBF293416DB005520F2 /* PoseTimer.swift */,
+				04E875E92956BFAF004430FD /* chime.wav */,
 				043319F82932C12400936A1E /* Assets.xcassets */,
 				043319FA2932C12400936A1E /* Preview Content */,
 			);
@@ -134,6 +137,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04E875EA2956BFAF004430FD /* chime.wav in Resources */,
 				043319FC2932C12400936A1E /* Preview Assets.xcassets in Resources */,
 				043319F92932C12400936A1E /* Assets.xcassets in Resources */,
 			);

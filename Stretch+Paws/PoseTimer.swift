@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AVFoundation
 
 // Where does it need to be shared?
 
@@ -13,8 +14,9 @@ class PoseTimer: ObservableObject {
     @Published var timerActive = false
     @Published var timerPaused = false
     @Published var timerEnded = false
-    @Published var timerDuration = 30
+    @Published var timerDuration = 5
     var poseTimer = Timer()
+    var audioPlayer: AVAudioPlayer?
     
     // Functionality:
     func startTimer() {
@@ -36,15 +38,22 @@ class PoseTimer: ObservableObject {
     }
 
     func endTimer() {
-        // soundTimer
-        poseTimer.invalidate()
+        soundTimer(sound: "chime", type: "wav")
         timerEnded = true
         timerActive = false
+        poseTimer.invalidate()
         timerDuration = 30
     }
     
-    func soundTimer() {
-        // play audio file
+    func soundTimer(sound: String, type: String) {
+        if let path = Bundle.main.path(forResource: sound, ofType: type) {
+            do {
+                audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: path))
+                audioPlayer?.play()
+            } catch {
+                print("Error")
+            }
+        }
     }
     
     func setPoseTitle() -> String{
